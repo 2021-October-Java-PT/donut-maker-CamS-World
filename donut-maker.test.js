@@ -31,4 +31,17 @@ describe("DonutMaker", () => {
     expect(underTest.autoClickerCount).toEqual(1);
     expect(underTest.donutCount).toEqual(0);
   });
+
+  test("does it increase the cost of the second auto clicker cost by ten percent", () => {
+    const underTest = new DonutMaker(500, 0, 100);
+    underTest.autoClickerCostMultiplier();
+    expect(underTest.autoClickerCost).toEqual(110);
+  });
+
+  test("does it increase the cost of the auto clickers by ten percent everytime an auto clicker is purchashed", () => {
+    const underTest = new DonutMaker(500, 0, 100);
+    underTest.buyAutoClicker();
+    underTest.buyAutoClicker();
+    expect(underTest.autoClickerCost).toEqual(121);
+  });
 });

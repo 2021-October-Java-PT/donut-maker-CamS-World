@@ -17,9 +17,14 @@ class DonutMaker {
     return this.autoClickerCount;
   }
 
+  autoClickerCostMultiplier() {
+    this.autoClickerCost += this.autoClickerCost / 10;
+  }
+
   buyAutoClicker() {
     this.donutCount -= this.autoClickerCost;
     this.autoClickerCount += 1;
+    this.autoClickerCostMultiplier();
   }
 }
 
