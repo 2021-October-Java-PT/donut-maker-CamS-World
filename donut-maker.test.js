@@ -18,4 +18,17 @@ describe("DonutMaker", () => {
     underTest.showDonutCount();
     expect(underTest.donutCount).toEqual(22);
   });
+
+  test("does it show the auto clicker count", () => {
+    const underTest = new DonutMaker(0, 0, 0);
+    underTest.showAutoClickerCount();
+    expect(underTest.autoClickerCount).toEqual(0);
+  });
+
+  test("does it add to the auto clicker count", () => {
+    const underTest = new DonutMaker(100, 0, 0);
+    underTest.buyAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(1);
+    expect(underTest.donutCount).toEqual(0);
+  });
 });
