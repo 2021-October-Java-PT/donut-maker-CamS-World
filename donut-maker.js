@@ -22,9 +22,11 @@ class DonutMaker {
   }
 
   buyAutoClicker() {
-    this.donutCount -= this.autoClickerCost;
-    this.autoClickerCount += 1;
-    this.autoClickerCostMultiplier();
+    if (this.donutCount >= this.autoClickerCost) {
+      this.donutCount -= this.autoClickerCost;
+      this.autoClickerCount += 1;
+      this.autoClickerCostMultiplier();
+    }
   }
 }
 

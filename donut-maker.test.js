@@ -43,5 +43,6 @@ describe("DonutMaker", () => {
     underTest.buyAutoClicker();
     underTest.buyAutoClicker();
     expect(underTest.autoClickerCost).toEqual(121);
+    expect(underTest.donutCount).toEqual(290);
   });
 });
