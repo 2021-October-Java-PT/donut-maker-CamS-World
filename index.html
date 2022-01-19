@@ -17,22 +17,25 @@
   </header>
   <body>
     <div class="container">
-      <main>
+      <main class="main-section">
         <section class="click-section">
-          <span class="donuts-display"></span>
+          <span id="donuts-display">Donut Count:</span>
           <button id="donut-maker">Make a donut</button>
         </section>
 
         <section class="auto-clicker-section">
-          <span class="auto-clicker-display"></span>
-          <button class="purchase-auto-clicker">Buy Auto Clicker</button>
+          <span id="auto-clicker-display"> Auto Clickers: </span>
+          <button id="purchase-auto-clicker">Buy Auto Clicker</button>
+          <div id="auto-clicker-cost-display">YOOOO</div>
         </section>
 
-        <section class="click-multiplier-section">
-          <span class="donut-muliplier-display"></span>
+        <section id="click-multiplier-section">
+          <span id="donut-muliplier-display">Donut Multipliers: </span>
           <button id="purchase-donut-multiplier">Buy Donut Multiplier</button>
+          <div id="donut-multiplier-cost-display"></div>
         </section>
       </main>
+      <div id="donutClickerStats"></div>
     </div>
     <script src="./index.js"></script>
   </body>
