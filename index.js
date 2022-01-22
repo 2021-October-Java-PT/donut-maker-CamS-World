@@ -6,13 +6,16 @@ const buyAutoClickerBtn = document.querySelector("#purchase-auto-clicker");
 const buyDonutMultiplierBtn = document.querySelector(
   "#purchase-donut-multiplier"
 );
+const toggleCompanyAbout = document.querySelector("#about-company-button");
+const closeAboutCompany = document.querySelector("#about-company-para");
 
-let donutClicker = new DonutMaker(400, 0, 100, 0, 10);
+let donutClicker = new DonutMaker(400, 0, 100, 0, 10, 1);
 
 renderPage();
 
 function renderPage() {
   donutClickerGame();
+  hideAboutCompany();
 }
 
 function donutClickerGame() {
@@ -59,9 +62,10 @@ function donutClickerGame() {
 
   buyAutoClickerBtn.addEventListener("click", () => {
     donutClicker.buyAutoClicker();
-    donutClicker.autoClickerCostMultiplier();
-    donutClicker.showDonutCount();
-    donutClicker.autoClickerActivation();
+
+    // donutClicker.autoClickerCostMultiplier();
+    // donutClicker.showDonutCount();
+    // donutClicker.autoClickerActivation();
 
     autoClickerDisplay.innerText =
       "Auto Clickers: " + donutClicker.autoClickerCount;
@@ -82,4 +86,44 @@ function donutClickerGame() {
     donutMultiplierCostDisplay.innerText =
       "Donut Multiplier Cost: " + donutClicker.donutMultiplierCost;
   });
+
+  toggleCompanyAbout.addEventListener("click", () => {
+    toggleCompanyElement();
+  });
+
+  closeAboutCompany.addEventListener("click", () => {
+    hideAboutCompany();
+  });
+
+  setInterval(() => {
+    if (
+      donutClicker.donutMultiplierCount === 0 &&
+      donutClicker.autoClickerCount > 0
+    ) {
+      donutClicker.donutCount += donutClicker.autoClickerCount;
+      donutClicker.donutCount = parseInt(donutClicker.donutCount.toFixed(0));
+      donutDisplay.innerText = "Donut Count: " + donutClicker.donutCount;
+    }
+    if (
+      donutClicker.donutMultiplierCount > 0 &&
+      donutClicker.autoClickerCount > 0
+    ) {
+      donutClicker.donutCount +=
+        1.2 ** donutClicker.donutMultiplierCount *
+        donutClicker.autoClickerCount;
+      donutClicker.donutCount = parseInt(donutClicker.donutCount.toFixed(0));
+      donutDisplay.innerText = "Donut Count: " + donutClicker.donutCount;
+    }
+  }, 1000);
+}
+
+function hideAboutCompany() {
+  var element = document.getElementById("about-company-para");
+
+  element.style.display = "none";
+}
+
+function toggleCompanyElement() {
+  var element = document.getElementById("about-company-para");
+  element.style.display = "block";
 }

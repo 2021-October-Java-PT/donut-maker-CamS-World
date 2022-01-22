@@ -4,39 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/donut-makerStylesheet.css" />
     <title>Donut Clicker</title>
+    
   </head>
   <header>
-    <nav class="header_nav">
-      <ul class="header_nav_list">
-        <li class="header_nave_listItem">Fred the Baking Company</li>
-        <li class="header_nave_listItem">Cookie Clicker:The Inspiration</li>
-        <li class="header_nave_listItem">Contact Info</li>
-      </ul>
+    <img id="header_image" src="/stylesheets/images/donut-line-img.jpeg" alt="donut-row-image">
+    <nav id="header_nav">
+      <div class="header_nav_list">
+        
+        <a id="about-company-button" type="button" onclick="toggleCompanyElement();" >Fred The Baker</a>
+       
+        <a
+          class="header_nave_listItem"
+          href="https://orteil.dashnet.org/cookieclicker/" target="_blank" rel="noreferrer noopener"
+          >Cookie Clicker: The Inspiration</a
+        >
+        <a class="header_nave_listItem contact-info" href="/#contactBar">Contact Info</a>
+        <a class="header_nave_listItem" href="about-developer.html" target="_self">Developed by Cameron Stephens</a>
+      </div>
     </nav>
+    <div class="dropdown-area">
+      <p id="about-company-para">Fred the Baker is tired of making real donuts and is ready to retire. He needs our help to keep his love of donuts alive. He wants you to create a game that uses button clicks to create virtual donuts for the world to enjoy. But all those early mornings of donut making may have tired out his brain because he has some strange requirements for 'Auto Clickers' and 'Donut Multipliers'. Unfortunately, it's always "Time to make the Donuts" and Fred is too busy to give us guidance on how to implement these requirements.<button id="close-company-about" >x</button> </p>
+      
+    </div>
   </header>
   <body>
     <div class="container">
       <main class="main-section">
         <section class="click-section">
-          <span id="donuts-display">Donut Count:</span>
-          <button id="donut-maker">Make a donut</button>
+          <span id="donuts-display">Donut Count:</span> <br />
+          <button id="donut-maker">Make donuts!</button>
         </section>
 
         <section class="auto-clicker-section">
-          <span id="auto-clicker-display"> Auto Clickers: </span>
+          <span id="auto-clicker-display"> Auto Clickers: </span> <br />
           <button id="purchase-auto-clicker">Buy Auto Clicker</button>
-          <div id="auto-clicker-cost-display">YOOOO</div>
+          <div id="auto-clicker-cost-display"></div>
         </section>
 
         <section id="click-multiplier-section">
-          <span id="donut-muliplier-display">Donut Multipliers: </span>
+          <span id="donut-muliplier-display">Donut Multipliers: </span> <br />
           <button id="purchase-donut-multiplier">Buy Donut Multiplier</button>
           <div id="donut-multiplier-cost-display"></div>
         </section>
       </main>
       <div id="donutClickerStats"></div>
     </div>
-    <script src="./index.js"></script>
+    <footer>
+      <div id="contactBar">
+        <li>Call us at <a href="tel:18885535565">1-888-555-5555</a>  </li> 
+        <li>email us at fredthebaker@hotmail.com</li> 
+    </footer>
+   
+    <script src="./index.js" ></script>
+    
   </body>
 </html>

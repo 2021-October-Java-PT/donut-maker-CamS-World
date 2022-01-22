@@ -1,0 +1,48 @@
+a {
+  text-decoration: white;
+  color: white;
+}
+
+.header_nav_list {
+  display: flex;
+  margin-bottom: 12px;
+  max-width: 1000px;
+  font-size: large;
+  background-color: #105c7a;
+  align-items: center;
+}
+
+.header_nave_listItem {
+  max-width: 18em;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5px 5px;
+  border-left: solid;
+  border-left-style: double;
+
+  border-color: #997a00;
+  background-blend-mode: color-burn;
+}
+
+.header_nave_listItem a:hover {
+  background-color: #88dd88;
+}
+
+#about-company-button {
+  max-width: 18em;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5px 5px;
+  border-left: solid;
+  border-left-style: double;
+
+  border-color: #997a00;
+  background-blend-mode: color-burn;
+}
+
+#header_image {
+  max-width: 745px;
+  max-height: 400px;
+  min-width: 500px;
+  min-height: fit-content;
+}
