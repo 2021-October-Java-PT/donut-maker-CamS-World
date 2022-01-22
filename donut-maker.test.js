@@ -45,4 +45,14 @@ describe("DonutMaker", () => {
     expect(underTest.autoClickerCost).toEqual(121);
     expect(underTest.donutCount).toEqual(290);
   });
+
+  test("does it increase the donut total by the amount of Auto Clickers owned", () => {
+    const underTest = new DonutMaker(500, 0, 100);
+    underTest.buyAutoClicker();
+    underTest.buyAutoClicker();
+    underTest.autoClickerActivation();
+    expect(underTest.autoClickerCost).toEqual(121);
+    expect(underTest.donutCount).toEqual(292);
+  });
+  // try to add activate auto clickers event now
 });
