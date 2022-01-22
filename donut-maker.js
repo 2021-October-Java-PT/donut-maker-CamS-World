@@ -23,7 +23,7 @@ class DonutMaker {
     if (this.donutMultiplierCount > 1) {
       this.donutCount += this.clickMultiplier;
       this.clickMultiplier = 1.2 ** this.donutMultiplierCount;
-      // this.donutCount = parseInt(this.donutCount.toFixed(0));
+      this.donutCount = parseInt(this.donutCount.toFixed(0));
     } else this.donutCount += 1;
     // this.donutCount = parseInt(this.donutCount.toFixed(0));
   }

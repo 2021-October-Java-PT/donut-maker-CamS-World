@@ -8,8 +8,9 @@ const buyDonutMultiplierBtn = document.querySelector(
 );
 const toggleCompanyAbout = document.querySelector("#about-company-button");
 const closeAboutCompany = document.querySelector("#about-company-para");
+const resetBtn = document.querySelector("#reset-button");
 
-let donutClicker = new DonutMaker(400, 0, 100, 0, 10, 1);
+let donutClicker = new DonutMaker(0, 0, 100, 0, 10, 1);
 
 renderPage();
 
@@ -63,10 +64,6 @@ function donutClickerGame() {
   buyAutoClickerBtn.addEventListener("click", () => {
     donutClicker.buyAutoClicker();
 
-    // donutClicker.autoClickerCostMultiplier();
-    // donutClicker.showDonutCount();
-    // donutClicker.autoClickerActivation();
-
     autoClickerDisplay.innerText =
       "Auto Clickers: " + donutClicker.autoClickerCount;
     donutDisplay.innerText = "Donut Count: " + donutClicker.donutCount;
@@ -95,6 +92,10 @@ function donutClickerGame() {
     hideAboutCompany();
   });
 
+  resetBtn.addEventListener("click", () => {
+    location.reload();
+  });
+
   setInterval(() => {
     if (
       donutClicker.donutMultiplierCount === 0 &&
@@ -115,6 +116,14 @@ function donutClickerGame() {
       donutDisplay.innerText = "Donut Count: " + donutClicker.donutCount;
     }
   }, 1000);
+
+  setInterval(() => {
+    toggleDisableAutoClickerBuy();
+  }, 10);
+
+  setInterval(() => {
+    toggleDisableDonutMultiplierBuy();
+  }, 10);
 }
 
 function hideAboutCompany() {
@@ -126,4 +135,22 @@ function hideAboutCompany() {
 function toggleCompanyElement() {
   var element = document.getElementById("about-company-para");
   element.style.display = "block";
+
+  element.attributes.removeNamedItemNS;
+}
+
+function toggleDisableAutoClickerBuy() {
+  if (donutClicker.donutCount < donutClicker.autoClickerCost) {
+    buyAutoClickerBtn.setAttribute("disabled", "disabled");
+  } else {
+    buyAutoClickerBtn.removeAttribute("disabled");
+  }
+}
+
+function toggleDisableDonutMultiplierBuy() {
+  if (donutClicker.donutCount < donutClicker.donutMultiplierCost) {
+    buyDonutMultiplierBtn.setAttribute("disabled", "disabled");
+  } else {
+    buyDonutMultiplierBtn.removeAttribute("disabled");
+  }
 }

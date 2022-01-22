@@ -3,10 +3,19 @@ a {
   color: white;
 }
 
+.github-lnk {
+  color: plum;
+}
+
+.container {
+  display: grid;
+  max-width: 745px;
+}
+
 .header_nav_list {
   display: flex;
   margin-bottom: 12px;
-  max-width: 1000px;
+  max-width: 745px;
   font-size: large;
   background-color: #105c7a;
   align-items: center;
@@ -33,16 +42,80 @@ a {
   justify-content: space-between;
   text-align: center;
   padding: 5px 5px;
-  border-left: solid;
-  border-left-style: double;
+  /* border-left: solid;
+  border-left-style: double; */
 
   border-color: #997a00;
   background-blend-mode: color-burn;
 }
 
 #header_image {
-  max-width: 745px;
+  max-width: 750px;
   max-height: 400px;
   min-width: 500px;
   min-height: fit-content;
+  align-items: center;
+}
+
+.click-section {
+  display: grid;
+}
+
+#donut-maker {
+  margin-left: auto;
+}
+
+.auto-clicker-section {
+  display: grid;
+}
+
+#purchase-auto-clicker {
+  margin-left: auto;
+}
+
+#click-multiplier-section {
+  display: grid;
+}
+
+#purchase-donut-multiplier {
+  margin-left: auto;
+}
+
+#donutClickerStats {
+  margin-top: 30px;
+  display: flex;
+  align-content: center;
+}
+
+#reset-button {
+  align-content: center;
+}
+
+#contactBar {
+  margin-top: 300px;
+}
+
+#contact-header {
+  text-align: center;
+  background-color: teal;
+}
+
+#auto-clicker-cost-display {
+  margin-bottom: 35px;
+}
+
+#bio-header {
+  text-decoration: underline;
+  text-align: center;
+  text-transform: unset;
+  margin-top: 20px;
+}
+
+#bio-para {
+  border: dotted;
+  padding: 15px;
+  border-color: #191369;
+  margin-top: 20px;
+  text-align: center;
+  align-self: center;
 }
